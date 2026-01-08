@@ -15,6 +15,7 @@ pp.runpp(net, algorithm="nr")
 # Mostrar resultados
 # print(f"\n--- Resultados (IEEE {numbarras}) ---") prints
 # print(net.res_bus[["vm_pu", "va_degree", "p_mw", "q_mvar"]])
+net.res_bus.index.name = "Bus"
 net.res_bus.index = net.bus.index + 1
 net.res_bus[["vm_pu", "va_degree"]].to_csv(f"resultados/ieee{numbarras}_pandapower.csv")
 print(

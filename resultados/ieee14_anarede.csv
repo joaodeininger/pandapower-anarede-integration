@@ -1,4 +1,4 @@
-Numero;Nome;Tensão (p.u);(Ângulo (graus);Carga Ativa (MW);Carga Reativa (Mvar);Geracao Ativa (MW);Geracao Reativa (Mvar);Shunt (Mvar);Potencia Ativa Elo DC (MW);Potencia Reativa Elo DC (Mvar);Injecao Equivalente (MW);Injecao Equivalente (Mvar);Motor de Inducao (MW);Motor de Inducao (Mvar);Tipo da Barra;Tensao (KV);CER (Mvar);Shunt de Linha (Mvar);Estado Operativo
+Numero;Nome;Tensao (p.u.);(Ângulo (graus);Carga Ativa (MW);Carga Reativa (Mvar);Geracao Ativa (MW);Geracao Reativa (Mvar);Shunt (Mvar);Potencia Ativa Elo DC (MW);Potencia Reativa Elo DC (Mvar);Injecao Equivalente (MW);Injecao Equivalente (Mvar);Motor de Inducao (MW);Motor de Inducao (Mvar);Tipo da Barra;Tensao (KV);CER (Mvar);Shunt de Linha (Mvar);Estado Operativo
 1;Barra-01--HV;1,06;0,00;0,00;0,00;232,40;-16,90;0,00;0,00;0,00;0,00;0,00;0,00;0,00;2;1,00;0,00;0,00;LIG
 2;Barra-02--HV;1,04;-4,90;21,70;12,70;40,00;42,40;0,00;0,00;0,00;0,00;0,00;0,00;0,00;1;1,00;0,00;0,00;LIG
 3;Barra-03--HV;1,01;-12,00;94,20;19,00;0,00;23,40;0,00;0,00;0,00;0,00;0,00;0,00;0,00;1;1,00;0,00;0,00;LIG

@@ -52,17 +52,19 @@ def calcular_erro_percentual(arquivo_x, arquivo_y, col_x, col_y, barras):
     df = pd.DataFrame({"Erro (%)": erro_format})
 
     # Opcional: Salvar resultado em novo CSV
-    df.to_csv(f"erros/resultado_comparacao{barras}.csv", index=False)
+    df.index.name = "Bus"
+    df.index = df.index + 1
+    df.to_csv(f"erros/resultado_comparacao{barras}.csv", header=True)
     print(f"\nArquivo 'resultado_comparacao{barras}.csv' salvo com sucesso.")
 
 
 # --- CONFIGURAÇÃO ---
 # Altere os nomes abaixo para os seus arquivos e colunas reais
-arquivo_programa_x = "resultados/ieee57_pandapower.csv"
-arquivo_programa_y = "resultados/ieee57_anarede.csv"
+arquivo_programa_x = "resultados/ieee118_pandapower.csv"
+arquivo_programa_y = "resultados/ieee118_anarede.csv"
 coluna_referencia = "vm_pu"  # Exemplo: nome da coluna no arquivo X
 coluna_comparacao = "Tensao (p.u.)"  # Exemplo: nome da coluna no arquivo Y
-barras = 57
+barras = 118
 
 # Executar
 if __name__ == "__main__":
