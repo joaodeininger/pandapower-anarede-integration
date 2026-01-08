@@ -3,79 +3,99 @@ import pandapower as pp
 import pandapower.networks as pn
 import pandas as pd
 
-# 1. Configuração e Carregamento
+# 1. Carregar IEEE 118
 numbarras = 118
-print(f"Carregando sistema IEEE {numbarras} nativo...")
+print(f"Processando IEEE {numbarras}...")
 net = pn.case118()
 
-# 2. Rodar o Fluxo de Potência
+# 2. Rodar Fluxo
 pp.runpp(net, algorithm="nr")
-print("Fluxo de potência convergido.")
+print("Fluxo convergido.")
 
-# 3. Criação do DataFrame final (Indexado pelo número da barra)
-# Usamos o índice original das barras (0 a 13) para agrupar, depois somamos 1 para virar ID ANAREDE
+# 3. Preparar DataFrame
 df_out = pd.DataFrame(index=net.bus.index)
 df_out.index.name = "Bus"
 
-# --- A. TENSÕES E ÂNGULOS (Vêm direto do resultado da barra) ---
+# --- TENSÕES (Direto da barra) ---
 df_out["VM_PU"] = net.res_bus["vm_pu"]
 df_out["VA_GRAU"] = net.res_bus["va_degree"]
 
-# --- B. CARGAS (Vêm da tabela de input de Carga) ---
-# Agrupamos as cargas pelo ID da barra, pois pode haver mais de uma carga por barra
-# fill_value=0 garante que barras sem carga fiquem com 0 e não NaN
-df_out["P_CARGA"] = net.load.groupby("bus")["p_mw"].sum()
-df_out["Q_CARGA"] = net.load.groupby("bus")["q_mvar"].sum()
+# --- CÁLCULO DA INJEÇÃO LÍQUIDA ---
+# Inicializa Series com Zeros indexadas pelas barras
+p_inj = pd.Series(0.0, index=net.bus.index)
+q_inj = pd.Series(0.0, index=net.bus.index)
 
-# --- C. GERAÇÃO (Vem de TRÊS lugares diferentes) ---
-# No Pandapower, geração vem de:
-# 1. ext_grid (Slack)
-# 2. gen (Geradores PV)
-# 3. sgen (Geradores estáticos - opcional, mas bom ter)
+# --- A. GERAÇÃO (Soma P e Q injetados) ---
 
-# Inicializa colunas de geração com 0
-df_out["P_GER"] = 0.0
-df_out["Q_GER"] = 0.0
-
-# C.1 Adicionar Slack (External Grid) - IMPORTANTE: Usar res_ext_grid (pois a potência é calculada)
-# Mapeia o resultado do slack para a barra onde ele está conectado
+# 1. Slack (External Grid)
 if not net.ext_grid.empty:
-    slack_bus_ids = net.ext_grid["bus"]
-    # .values para alinhar corretamente caso os indices não batam direto
-    df_out.loc[slack_bus_ids, "P_GER"] += net.res_ext_grid["p_mw"].values
-    df_out.loc[slack_bus_ids, "Q_GER"] += net.res_ext_grid["q_mvar"].values
+    # A tabela de resultados (res_ext_grid) não tem a coluna 'bus'.
+    # Usamos o indice da tabela de entrada para saber qual barra é.
+    # Mapeamos o resultado P para a barra correspondente.
+    p_slack = net.res_ext_grid["p_mw"].groupby(net.ext_grid["bus"]).sum()
+    q_slack = net.res_ext_grid["q_mvar"].groupby(net.ext_grid["bus"]).sum()
 
-# C.2 Adicionar Geradores (Gen) - Usar res_gen para pegar o valor exato (especialmente Q)
+    p_inj = p_inj.add(p_slack, fill_value=0)
+    q_inj = q_inj.add(q_slack, fill_value=0)
+
+# 2. Geradores (Gen)
 if not net.gen.empty:
-    # Agrupa resultados dos geradores por barra
-    p_gen_by_bus = net.res_gen.groupby(net.gen["bus"])["p_mw"].sum()
-    q_gen_by_bus = net.res_gen.groupby(net.gen["bus"])["q_mvar"].sum()
+    # Agrupa o resultado (res_gen) usando a coluna 'bus' da entrada (gen)
+    p_gen = net.res_gen["p_mw"].groupby(net.gen["bus"]).sum()
+    q_gen = net.res_gen["q_mvar"].groupby(net.gen["bus"]).sum()
 
-    # Soma ao dataframe existente (usando add para preservar o que já veio do Slack)
-    df_out["P_GER"] = df_out["P_GER"].add(p_gen_by_bus, fill_value=0)
-    df_out["Q_GER"] = df_out["Q_GER"].add(q_gen_by_bus, fill_value=0)
+    p_inj = p_inj.add(p_gen, fill_value=0)
+    q_inj = q_inj.add(q_gen, fill_value=0)
 
-# C.3 Adicionar Geradores Estáticos (sgen) - caso existam
+# 3. Geradores Estáticos (Sgen)
 if not net.sgen.empty:
-    p_sgen_by_bus = net.res_sgen.groupby(net.sgen["bus"])["p_mw"].sum()
-    q_sgen_by_bus = net.res_sgen.groupby(net.sgen["bus"])["q_mvar"].sum()
+    p_sgen = net.res_sgen["p_mw"].groupby(net.sgen["bus"]).sum()
+    q_sgen = net.res_sgen["q_mvar"].groupby(net.sgen["bus"]).sum()
 
-    df_out["P_GER"] = df_out["P_GER"].add(p_sgen_by_bus, fill_value=0)
-    df_out["Q_GER"] = df_out["Q_GER"].add(q_sgen_by_bus, fill_value=0)
+    p_inj = p_inj.add(p_sgen, fill_value=0)
+    q_inj = q_inj.add(q_sgen, fill_value=0)
 
-# 4. Limpeza e Formatação Final
-df_out = df_out.fillna(0.0)  # Remove NaNs remanescentes
+# --- B. SHUNTS (Capacitores/Reatores) ---
+if not net.shunt.empty:
+    # Shunts: P positivo aqui significa consumo (perda), Q positivo é injeção capacitiva?
+    # No pandapower res_shunt: p_mw é consumo, q_mvar é injeção (depende da convenção).
+    # Vamos somar algebricamente. Se for banco de capacitor, Q vem positivo ou negativo?
+    # Geralmente, res_shunt traz o valor efetivo. Vamos somar como injeção.
+    # Se o sinal estiver trocado em relação ao ANAREDE, trocaremos para .sub()
+    p_shunt = net.res_shunt["p_mw"].groupby(net.shunt["bus"]).sum()
+    q_shunt = net.res_shunt["q_mvar"].groupby(net.shunt["bus"]).sum()
 
-# Ajustar índice para começar de 1 (Padrão ANAREDE/IEEE)
+    # Shunt geralmente é modelado como carga no fluxo, mas queremos ver o efeito líquido.
+    # P de shunt é perda -> entra subtraindo (ou somando negativo)
+    # Q de shunt (capacitor) -> injeta -> entra somando
+
+    # Nota: No output padrão do pandapower, res_shunt Q é negativo para indutores e positivo para capacitores?
+    # Melhor assumir soma algébrica da injeção.
+    p_inj = p_inj.add(p_shunt, fill_value=0)
+    q_inj = p_inj.add(q_shunt, fill_value=0)
+
+# --- C. CARGAS (Subtrai P e Q consumidos) ---
+if not net.load.empty:
+    p_load = net.res_load["p_mw"].groupby(net.load["bus"]).sum()
+    q_load = net.res_load["q_mvar"].groupby(net.load["bus"]).sum()
+
+    p_inj = p_inj.sub(p_load, fill_value=0)
+    q_inj = q_inj.sub(q_load, fill_value=0)
+
+
+# --- FORMATAR PARA O CSV ---
+# Saldo > 0 -> Geração Líquida
+# Saldo < 0 -> Carga Líquida
+
+df_out["P_GER_LIQ"] = p_inj.apply(lambda x: x if x > 1e-5 else 0)
+df_out["P_CARGA_LIQ"] = p_inj.apply(lambda x: abs(x) if x < -1e-5 else 0)
+
+df_out["Q_GER_LIQ"] = q_inj.apply(lambda x: x if x > 1e-5 else 0)
+df_out["Q_CARGA_LIQ"] = q_inj.apply(lambda x: abs(x) if x < -1e-5 else 0)
+
+# Ajuste Index (de 0-based para 1-based se necessário)
 df_out.index = df_out.index + 1
-
-# Arredondamento opcional para ficar bonito
 df_out = df_out.round(4)
 
-# Salvar
-file_name = f"resultados/ieee{numbarras}_pandapower.csv"
-df_out.to_csv(file_name, sep=";", decimal=",")
-
-print(f"Arquivo salvo com sucesso: {file_name}")
-print("\n--- Amostra das Barras com Geração e Carga (Ex: Barra 2) ---")
-print(df_out.loc[[1, 2, 3]])  # Mostra barras 1, 2 e 3 para conferência
+df_out.to_csv(f"resultados/ieee{numbarras}_liquido_corrigido_v2.csv", sep=";", decimal=",")
+print("Concluído e salvo.")

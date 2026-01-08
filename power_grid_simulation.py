@@ -32,13 +32,13 @@ create_load(net, bus=bus5, p_mw=30, q_mvar=10, name="Load3")
 
 # Line Creation
 # Calls add_line, which converts parameters from pu_km to the pandapower unit
-line1_2 = add_line(0.02, 0.06, 0.04, 10)
-line2_3 = add_line(0.03, 0.09, 0.06, 20)
-line3_4 = add_line(0.02, 0.06, 0.04, 15)
-line4_5 = add_line(0.04, 0.12, 0.08, 10)
-line5_1 = add_line(0.01, 0.03, 0.02, 25)
+line1_2 = add_line(0.0010, 0.0025, 0.0005, 10)
+line2_3 = add_line(0.0010, 0.0025, 0.0005, 20)
+line3_4 = add_line(0.0010, 0.0025, 0.0005, 15)
+line4_5 = add_line(0.0010, 0.0025, 0.0005, 10)
+line5_1 = add_line(0.0010, 0.0025, 0.0005, 25)
 
-# CORREÇÃO 1: Removido o ".data". Acesso direto ao array.
+# Line creation using add_line() parameters
 create_line_from_parameters(
     net,
     from_bus=bus1,
@@ -108,12 +108,12 @@ print("\nResultados das Barras:")
 print(results)
 
 results.to_csv("resultados_pandapower_joaopedro.csv")
-print("\nResultados exportados para 'resultados_pandapower_joaopedro.csv'")
+print("\nResultados exportados para 'resultados/resultados_pandapower_joaopedro.csv'")
 
-# --- 7. Contingência (Abertura da Linha 1-2) ---
+# Contingency simulation
 print("\n--- Simulação de Contingência: Abrindo line1-2 ---")
 
-# CORREÇÃO 2: Nome da linha ajustado para "line1-2" (como foi criada acima)
+# Open line1-2
 net.line.loc[net.line.name == "line1-2", "in_service"] = False
 
 runpp(net, algorithm="nr")
@@ -121,5 +121,5 @@ runpp(net, algorithm="nr")
 print("Resultados Pós-Contingência (Tensões nas Barras):")
 print(net.res_bus[["vm_pu", "va_degree"]])
 
-net.res_bus.to_csv("resultados_contingencia.csv")
-print("\nResultados da contingência salvos em 'resultados_contingencia.csv'")
+net.res_bus.to_csv("resultados/resultados_contingencia.csv")
+print("\nResultados da contingência salvos em 'resultados/resultados_contingencia.csv'")
