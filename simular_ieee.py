@@ -2,10 +2,10 @@ import pandapower as pp
 import pandapower.networks as pn
 
 # Ajustar numero de barras do sistema para formatação correta dos arquivos de resultados
-numbarras = 118
+numbarras = 57
 print(f"Carregando sistema IEEE {numbarras} nativo...")
 # Carrega o sistema IEEE padrão (que é exatamente o que está no seu txt) IMPORTANTE: LEMBRE DE MUDAR O CASE
-net = pn.case118()
+net = pn.case57()
 
 print(f"Rede carregada: {len(net.bus)} barras, {len(net.line)} linhas.")
 
@@ -17,7 +17,9 @@ pp.runpp(net, algorithm="nr")
 # print(net.res_bus[["vm_pu", "va_degree", "p_mw", "q_mvar"]])
 net.res_bus.index.name = "Bus"
 net.res_bus.index = net.bus.index + 1
-net.res_bus[["vm_pu", "va_degree"]].to_csv(f"resultados/ieee{numbarras}_pandapower.csv")
+net.res_bus[["vm_pu", "va_degree"]].to_csv(
+    f"resultados/ieee{numbarras}_pandapower.csv", sep=";", decimal=","
+)
 print(
     f"Arquivo de resultados salvo na pasta resultados como ieee{numbarras}_pandapower.csv"
 )
