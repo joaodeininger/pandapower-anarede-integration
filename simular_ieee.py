@@ -2,10 +2,10 @@ import pandapower as pp
 import pandapower.networks as pn
 
 # Ajustar numero de barras do sistema para formatação correta dos arquivos de resultados
-numbarras = 57
+numbarras = 118
 print(f"Carregando sistema IEEE {numbarras} nativo...")
 # Carrega o sistema IEEE padrão (que é exatamente o que está no seu txt) IMPORTANTE: LEMBRE DE MUDAR O CASE
-net = pn.case57()
+net = pn.case118()
 
 print(f"Rede carregada: {len(net.bus)} barras, {len(net.line)} linhas.")
 
@@ -13,10 +13,12 @@ print(f"Rede carregada: {len(net.bus)} barras, {len(net.line)} linhas.")
 pp.runpp(net, algorithm="nr")
 
 # Mostrar resultados
-print(f"\n--- Resultados (IEEE {numbarras}) ---")
-print(net.res_bus[["vm_pu", "va_degree", "p_mw", "q_mvar"]])
-net.res_bus[["vm_pu", "va_degree"]].to_csv(
-    f"resultados_ieee{numbarras}.csv", index=False
+# print(f"\n--- Resultados (IEEE {numbarras}) ---") prints
+# print(net.res_bus[["vm_pu", "va_degree", "p_mw", "q_mvar"]])
+net.res_bus.index = net.bus.index + 1
+net.res_bus[["vm_pu", "va_degree"]].to_csv(f"resultados/ieee{numbarras}_pandapower.csv")
+print(
+    f"Arquivo de resultados salvo na pasta resultados como ieee{numbarras}_pandapower.csv"
 )
 
 # Simular a contingência (Exemplo: abrir linha entre barra 1 e 2)
