@@ -3,12 +3,10 @@ from pandapower.create import (
     create_empty_network,
     create_ext_grid,
     create_gen,
-    create_load,
+    create_load
 )
 from pandapower.create.line_create import create_line_from_parameters
 from pandapower.run import runpp
-
-# Importa a função do seu outro arquivo
 from pu_to_unit import add_line
 
 # Base Tension Value given in Table
@@ -47,7 +45,7 @@ create_line_from_parameters(
     x_ohm_per_km=line1_2[1],
     c_nf_per_km=line1_2[2],
     length_km=line1_2[3],
-    max_i_ka=1,
+    max_i_ka=100,
     name="line1-2",
 )
 
@@ -59,7 +57,7 @@ create_line_from_parameters(
     x_ohm_per_km=line2_3[1],
     c_nf_per_km=line2_3[2],
     length_km=line2_3[3],
-    max_i_ka=1,
+    max_i_ka=100,
     name="line2-3",
 )
 create_line_from_parameters(
@@ -70,7 +68,7 @@ create_line_from_parameters(
     x_ohm_per_km=line3_4[1],
     c_nf_per_km=line3_4[2],
     length_km=line3_4[3],
-    max_i_ka=1,
+    max_i_ka=100,
     name="line3-4",
 )
 create_line_from_parameters(
@@ -81,7 +79,7 @@ create_line_from_parameters(
     x_ohm_per_km=line4_5[1],
     c_nf_per_km=line4_5[2],
     length_km=line4_5[3],
-    max_i_ka=1,
+    max_i_ka=100,
     name="line4-5",
 )
 create_line_from_parameters(
@@ -92,7 +90,7 @@ create_line_from_parameters(
     x_ohm_per_km=line5_1[1],
     c_nf_per_km=line5_1[2],
     length_km=line5_1[3],
-    max_i_ka=1,
+    max_i_ka=100,
     name="line5-1",
 )
 

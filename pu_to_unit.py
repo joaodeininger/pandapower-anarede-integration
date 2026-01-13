@@ -15,6 +15,7 @@ def add_line(r_pu, x_pu, b_pu, length_km):
     # Conversão de Susceptância (B) para Capacitância (C)
     # B_siemens = B_pu / Z_base
     # B = 2 * pi * f * C  => C = B / (2 * pi * f)
+    # Se b_pu for o valor total da linha:
     b_siemens_per_km = b_pu / Z_base
     c_farad_per_km = b_siemens_per_km / (2 * np.pi * freq)
     c_nf_per_km = c_farad_per_km * 1e9  # Converte para nanoFarads
