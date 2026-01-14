@@ -16,8 +16,6 @@ erro.py (Error Analysis): Comparison tool. This script reads two columns from di
 **Helper and Legacy Scripts**
 pu_to_unit.py: Helper module containing parameter conversion functions (e.g., from p.u. to physical units). It is imported and used by the main scripts.
 
-simular ieee.py (Legacy): An old/deprecated version of the simulation script. Kept only for history or legacy code reference. It is recommended to use simular_ieee2.py instead.
-
 **Output Folders**
 /resultados: Directory where the power flow simulation results are saved.
 
@@ -75,8 +73,6 @@ erro.py (Análise de Erro): Ferramenta de comparação. Este script lê duas col
 
 **Scripts Auxiliares e Antigos**
 pu_to_unit.py: Módulo auxiliar que contém funções de conversão de parâmetros (ex: de p.u. para unidades físicas). É importado e utilizado pelos scripts principais.
-
-simular ieee.py (Antigo): Versão antiga/depreciada do script de simulação. Mantido apenas para histórico ou referência de código legado. Recomenda-se usar o simular_ieee2.py.
 
 **Pastas de Saída**
 /resultados: Diretório onde são salvos os resultados das simulações de fluxo de potência.

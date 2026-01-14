@@ -7,11 +7,16 @@ import pandas as pd
 print("Carregando caso IEEE 118...")
 net = pn.case118()
 
-# -------------------------------------------------------------------------
-# AJUSTE IMPORTANTE: Limites de Reativos
-# O ANAREDE costuma travar o Q nos limites. O Pandapower padrão não.
-# Ao ativar isso, aproximamos o comportamento (PV vira PQ se estourar limite).
-# -------------------------------------------------------------------------
+# ... (Seu código de importação e carregamento da rede)
+net = pn.case118()
+
+
+
+# ... (Agora segue o fluxo normal: enforce_q_lims=True, runpp, etc.)
+
+
+
+# Executando fluxo de potência
 print("Executando fluxo de potência (Considerando limites de Q)...")
 try:
     pp.runpp(net, algorithm="nr", enforce_q_lims=True, calculate_voltage_angles=True)

@@ -119,5 +119,5 @@ runpp(net, algorithm="nr")
 print("Resultados Pós-Contingência (Tensões nas Barras):")
 print(net.res_bus[["vm_pu", "va_degree"]])
 
-net.res_bus.to_csv("resultados/resultados_contingencia.csv")
-print("\nResultados da contingência salvos em 'resultados/resultados_contingencia.csv'")
+net.res_bus.to_csv("resultados/resultados_pandapower_joaopedro_contingencia.csv")
+print("\nResultados da contingência salvos em 'resultados/resultados_pandapower_joaopedro_contingencia.csv'")
