@@ -3,19 +3,10 @@ import pandapower as pp
 import pandapower.networks as pn
 import pandas as pd
 
-# 1. Carregar IEEE 118 padrão
+# 1. Carregar IEEE padrão
 print("Carregando caso IEEE 118...")
 net = pn.case118()
-
-# ... (Seu código de importação e carregamento da rede)
-net = pn.case118()
-
-
-
-# ... (Agora segue o fluxo normal: enforce_q_lims=True, runpp, etc.)
-
-
-
+output_file = "resultados/ieee118_pandapower.csv"
 # Executando fluxo de potência
 print("Executando fluxo de potência (Considerando limites de Q)...")
 try:
@@ -119,7 +110,6 @@ cols_order = [
 ]
 df_final = df_out[cols_order]
 
-output_file = "resultados/ieee118_pandapower.csv"
 print(f"Salvando CSV formatado em: {output_file}")
 
 df_final.to_csv(
