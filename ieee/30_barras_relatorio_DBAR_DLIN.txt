@@ -1,0 +1,121 @@
+CEPEL - CENTRO DE PESQUISAS DE ENERGIA ELETRICA - PROGRAMA DE ANALISE DE REDES - V12.00.01                                 PAG.   1
+
+ IEEE 30 Bus Test Case - Winter 1961                                             
+ RELATORIO DE DADOS DE BARRA CA
+
+ X------------------X-------------X----------------------------X-------X-----------------------X---------------X-------X---X---X---------------------------------------X
+      BARRA            BARRA              TENSAO          GRUPO  GER MW         GER Mvar             CARGA       SHUNT      BMP AG1 AG2 AG3 AG4 AG5 AG6 AG7 AG8 AG9 A10
+  NUM.      NOME     TP ARE CONTR   MOD   ANG   ESPEC CNT B  L   ATUAL     MIN   ATUAL     MAX      MW    Mvar    Mvar  EST TIP GRP GRP GRP GRP GRP GRP GRP GRP GRP GRP
+ X-----X------------X--X---X------X-----X------X-----X---X--X--X-------X-------X-------X-------X-------X-------X-------X---X---X---X---X---X---X---X---X---X---X---X---X
+
+      1 Glen-Lyn-132  2   1      1 1.060    0.0 1.060 LOC  A  0   260.2 -9999.0   -16.1 99999.0     0.0     0.0     0.0 LIG                                            
+      2 Claytor--132  1   1      2 1.043   -5.0 1.043 LOC  A  0    40.0   -40.0    50.0    50.0    21.7    12.7     0.0 LIG                                            
+      3 Kumis----132  0   1      0 1.021   -7.0            A  0     0.0     0.0     0.0     0.0     2.4     1.2     0.0 LIG                                            
+      4 Hancock -132  0   1      0 1.012   -9.0            A  0     0.0     0.0     0.0     0.0     7.6     1.6     0.0 LIG                                            
+      5 Fieldale-132  1   1      5 1.010  -14.0 1.010 LOC  A  0     0.0   -40.0    37.0    40.0    94.2    19.0     0.0 LIG                                            
+      6 Roanoke--132  0   1      0 1.010  -11.0            A  0     0.0     0.0     0.0     0.0     0.0     0.0     0.0 LIG                                            
+      7 Blaine---132  0   1      0 1.002  -13.0            A  0     0.0     0.0     0.0     0.0    22.8    10.9     0.0 LIG                                            
+      8 Reusens--132  1   1      8 1.010  -12.0 1.010 LOC  A  0     0.0   -10.0    37.3    40.0    30.0    30.0     0.0 LIG                                            
+      9 Roanoke--1.0  0   1      0 1.051  -14.0            Z  0     0.0     0.0     0.0     0.0     0.0     0.0     0.0 LIG                                            
+     10 Roanoke---33  0   1      0 1.045  -15.0            T  0     0.0     0.0     0.0     0.0     5.8     2.0    19.0 LIG                                            
+     11 Roanoke---11  1   1     11 1.082  -14.0 1.082 LOC  S  0     0.0    -6.0    16.2    24.0     0.0     0.0     0.0 LIG                                            
+     12 Hancock---33  0   1      0 1.057  -15.0            T  0     0.0     0.0     0.0     0.0    11.2     7.5     0.0 LIG                                            
+     13 Hancock---11  1   1     13 1.071  -15.0 1.071 LOC  S  0     0.0    -6.0    10.6    24.0     0.0     0.0     0.0 LIG                                            
+     14 Barra14---33  0   1      0 1.042  -16.0            T  0     0.0     0.0     0.0     0.0     6.2     1.6     0.0 LIG                                            
+     15 Barra15---33  0   1      0 1.038  -16.0            T  0     0.0     0.0     0.0     0.0     8.2     2.5     0.0 LIG                                            
+     16 Barra16---33  0   1      0 1.045  -15.0            T  0     0.0     0.0     0.0     0.0     3.5     1.8     0.0 LIG                                            
+     17 Barra17---33  0   1      0 1.040  -16.0            T  0     0.0     0.0     0.0     0.0     9.0     5.8     0.0 LIG                                            
+     18 Barra18---33  0   1      0 1.028  -16.0            T  0     0.0     0.0     0.0     0.0     3.2     0.9     0.0 LIG                                            
+     19 Barra19---33  0   1      0 1.026  -17.0            T  0     0.0     0.0     0.0     0.0     9.5     3.4     0.0 LIG                                            
+     20 Barra20---33  0   1      0 1.030  -16.0            T  0     0.0     0.0     0.0     0.0     2.2     0.7     0.0 LIG                                            
+     21 Barra21---33  0   1      0 1.033  -16.0            T  0     0.0     0.0     0.0     0.0    17.5    11.2     0.0 LIG                                            
+     22 Barra22---33  0   1      0 1.033  -16.0            T  0     0.0     0.0     0.0     0.0     0.0     0.0     0.0 LIG                                            
+CEPEL - CENTRO DE PESQUISAS DE ENERGIA ELETRICA - PROGRAMA DE ANALISE DE REDES - V12.00.01                                 PAG.   2
+
+ IEEE 30 Bus Test Case - Winter 1961                                             
+ RELATORIO DE DADOS DE BARRA CA
+
+ X------------------X-------------X----------------------------X-------X-----------------------X---------------X-------X---X---X---------------------------------------X
+      BARRA            BARRA              TENSAO          GRUPO  GER MW         GER Mvar             CARGA       SHUNT      BMP AG1 AG2 AG3 AG4 AG5 AG6 AG7 AG8 AG9 A10
+  NUM.      NOME     TP ARE CONTR   MOD   ANG   ESPEC CNT B  L   ATUAL     MIN   ATUAL     MAX      MW    Mvar    Mvar  EST TIP GRP GRP GRP GRP GRP GRP GRP GRP GRP GRP
+ X-----X------------X--X---X------X-----X------X-----X---X--X--X-------X-------X-------X-------X-------X-------X-------X---X---X---X---X---X---X---X---X---X---X---X---X
+
+     23 Barra23---33  0   1      0 1.027  -16.0            T  0     0.0     0.0     0.0     0.0     3.2     1.6     0.0 LIG                                            
+     24 Barra24---33  0   1      0 1.021  -16.0            T  0     0.0     0.0     0.0     0.0     8.7     6.7     4.3 LIG                                            
+     25 Barra25---33  0   1      0 1.017  -16.0            T  0     0.0     0.0     0.0     0.0     0.0     0.0     0.0 LIG                                            
+     26 Barra26---33  0   1      0 1.000  -16.0            T  0     0.0     0.0     0.0     0.0     3.5     2.3     0.0 LIG                                            
+     27 Cloverdle-33  0   1      0 1.023  -15.0            T  0     0.0     0.0     0.0     0.0     0.0     0.0     0.0 LIG                                            
+     28 Cloverdle132  0   1      0 1.007  -11.0            A  0     0.0     0.0     0.0     0.0     0.0     0.0     0.0 LIG                                            
+     29 Barra29---33  0   1      0 1.003  -17.0            T  0     0.0     0.0     0.0     0.0     2.4     0.9     0.0 LIG                                            
+     30 Barra30---33  0   1      0 0.992  -17.0            T  0     0.0     0.0     0.0     0.0    10.6     1.9     0.0 LIG                                            
+CEPEL - CENTRO DE PESQUISAS DE ENERGIA ELETRICA - PROGRAMA DE ANALISE DE REDES - V12.00.01                                 PAG.   3
+
+ IEEE 30 Bus Test Case - Winter 1961                                             
+ RELATORIO DE DADOS DE CIRCUITO CA
+
+ X--------------X-----------X-----X-----------------------X-----------------------------------X--------------------X-------------------------X---------------------------------------X-------X
+     BARRA          ESTADO   BARRA  RESIST  REATAN  SUSCEP         T A P         ANG  BARRA           (MVA)               IDENTIFICACAO       AG1 AG2 AG3 AG4 AG5 AG6 AG7 AG8 AG9 A10 Unidade
+   DE   PARA  NC CIR DE PARA PROP.   (%)     (%)   (Mvar)   ATUAL   MIN    MAX  DEFAS CONTR. M NORMAL EMERG. EQUIP.   DA BARRA    PARA BARRA  GRP GRP GRP GRP GRP GRP GRP GRP GRP GRP Max Ope
+ X-----X-----X--X---X---X---X-----X-------X-------X-------X------X------X------X-----X------X-X------X------X------X------------X------------X---X---X---X---X---X---X---X---X---X---X---X---X
+
+      1     2  1 Lig Lig Lig     1    1.92    5.75   5.280                                     9999.0 9999.0 9999.0 Glen-Lyn-132 Claytor--132                                                
+      1     3  1 Lig Lig Lig     1    4.52   16.52   4.080                                     9999.0 9999.0 9999.0 Glen-Lyn-132 Kumis----132                                                
+      2     4  1 Lig Lig Lig     2    5.70   17.37   3.680                                     9999.0 9999.0 9999.0 Claytor--132 Hancock -132                                                
+      2     5  1 Lig Lig Lig     2    4.72   19.83   4.180                                     9999.0 9999.0 9999.0 Claytor--132 Fieldale-132                                                
+      2     6  1 Lig Lig Lig     2    5.81   17.63   3.740                                     9999.0 9999.0 9999.0 Claytor--132 Roanoke--132                                                
+      3     4  1 Lig Lig Lig     3    1.32    3.79   0.840                                     9999.0 9999.0 9999.0 Kumis----132 Hancock -132                                                
+      4     6  1 Lig Lig Lig     4    1.19    4.14   0.900                                     9999.0 9999.0 9999.0 Hancock -132 Roanoke--132                                                
+      4    12  1 Lig Lig Lig     4    0.00   25.60   0.000  0.932                              9999.0 9999.0 9999.0 Hancock -132 Hancock---33                                           1   1
+      5     7  1 Lig Lig Lig     5    4.60   11.60   2.040                                     9999.0 9999.0 9999.0 Fieldale-132 Blaine---132                                                
+      6     7  1 Lig Lig Lig     6    2.67    8.20   1.700                                     9999.0 9999.0 9999.0 Roanoke--132 Blaine---132                                                
+      6     8  1 Lig Lig Lig     6    1.20    4.20   0.900                                     9999.0 9999.0 9999.0 Roanoke--132 Reusens--132                                                
+      6     9  1 Lig Lig Lig     6    0.00   20.80   0.000  0.978                              9999.0 9999.0 9999.0 Roanoke--132 Roanoke--1.0                                           1   1
+      6    10  1 Lig Lig Lig     6    0.00   55.60   0.000  0.969                              9999.0 9999.0 9999.0 Roanoke--132 Roanoke---33                                           1   1
+      6    28  1 Lig Lig Lig     6    1.69    5.99   1.300                                     9999.0 9999.0 9999.0 Roanoke--132 Cloverdle132                                                
+      8    28  1 Lig Lig Lig     8    6.36   20.00   4.280                                     9999.0 9999.0 9999.0 Reusens--132 Cloverdle132                                                
+      9    10  1 Lig Lig Lig     9    0.00   11.00   0.000                                     9999.0 9999.0 9999.0 Roanoke--1.0 Roanoke---33                                                
+      9    11  1 Lig Lig Lig     9    0.00   20.80   0.000                                     9999.0 9999.0 9999.0 Roanoke--1.0 Roanoke---11                                                
+CEPEL - CENTRO DE PESQUISAS DE ENERGIA ELETRICA - PROGRAMA DE ANALISE DE REDES - V12.00.01                                 PAG.   4
+
+ IEEE 30 Bus Test Case - Winter 1961                                             
+ RELATORIO DE DADOS DE CIRCUITO CA
+
+ X--------------X-----------X-----X-----------------------X-----------------------------------X--------------------X-------------------------X---------------------------------------X-------X
+     BARRA          ESTADO   BARRA  RESIST  REATAN  SUSCEP         T A P         ANG  BARRA           (MVA)               IDENTIFICACAO       AG1 AG2 AG3 AG4 AG5 AG6 AG7 AG8 AG9 A10 Unidade
+   DE   PARA  NC CIR DE PARA PROP.   (%)     (%)   (Mvar)   ATUAL   MIN    MAX  DEFAS CONTR. M NORMAL EMERG. EQUIP.   DA BARRA    PARA BARRA  GRP GRP GRP GRP GRP GRP GRP GRP GRP GRP Max Ope
+ X-----X-----X--X---X---X---X-----X-------X-------X-------X------X------X------X-----X------X-X------X------X------X------------X------------X---X---X---X---X---X---X---X---X---X---X---X---X
+
+     10    17  1 Lig Lig Lig    10    3.24    8.45   0.000                                     9999.0 9999.0 9999.0 Roanoke---33 Barra17---33                                                
+     10    20  1 Lig Lig Lig    10    9.36   20.90   0.000                                     9999.0 9999.0 9999.0 Roanoke---33 Barra20---33                                                
+     10    21  1 Lig Lig Lig    10    3.48    7.49   0.000                                     9999.0 9999.0 9999.0 Roanoke---33 Barra21---33                                                
+     10    22  1 Lig Lig Lig    10    7.27   14.99   0.000                                     9999.0 9999.0 9999.0 Roanoke---33 Barra22---33                                                
+     12    13  1 Lig Lig Lig    12    0.00   14.00   0.000                                     9999.0 9999.0 9999.0 Hancock---33 Hancock---11                                                
+     12    14  1 Lig Lig Lig    12   12.31   25.59   0.000                                     9999.0 9999.0 9999.0 Hancock---33 Barra14---33                                                
+     12    15  1 Lig Lig Lig    12    6.62   13.04   0.000                                     9999.0 9999.0 9999.0 Hancock---33 Barra15---33                                                
+     12    16  1 Lig Lig Lig    12    9.45   19.87   0.000                                     9999.0 9999.0 9999.0 Hancock---33 Barra16---33                                                
+     14    15  1 Lig Lig Lig    14   22.10   19.97   0.000                                     9999.0 9999.0 9999.0 Barra14---33 Barra15---33                                                
+     15    18  1 Lig Lig Lig    15   10.73   21.85   0.000                                     9999.0 9999.0 9999.0 Barra15---33 Barra18---33                                                
+     15    23  1 Lig Lig Lig    15   10.00   20.20   0.000                                     9999.0 9999.0 9999.0 Barra15---33 Barra23---33                                                
+     16    17  1 Lig Lig Lig    16    5.24   19.23   0.000                                     9999.0 9999.0 9999.0 Barra16---33 Barra17---33                                                
+     18    19  1 Lig Lig Lig    18    6.39   12.92   0.000                                     9999.0 9999.0 9999.0 Barra18---33 Barra19---33                                                
+     19    20  1 Lig Lig Lig    19    3.40    6.80   0.000                                     9999.0 9999.0 9999.0 Barra19---33 Barra20---33                                                
+     21    22  1 Lig Lig Lig    21    1.16    2.36   0.000                                     9999.0 9999.0 9999.0 Barra21---33 Barra22---33                                                
+     22    24  1 Lig Lig Lig    22   11.50   17.90   0.000                                     9999.0 9999.0 9999.0 Barra22---33 Barra24---33                                                
+     23    24  1 Lig Lig Lig    23   13.20   27.00   0.000                                     9999.0 9999.0 9999.0 Barra23---33 Barra24---33                                                
+     24    25  1 Lig Lig Lig    24   18.85   32.92   0.000                                     9999.0 9999.0 9999.0 Barra24---33 Barra25---33                                                
+     25    26  1 Lig Lig Lig    25   25.44   38.00   0.000                                     9999.0 9999.0 9999.0 Barra25---33 Barra26---33                                                
+     25    27  1 Lig Lig Lig    25   10.93   20.87   0.000                                     9999.0 9999.0 9999.0 Barra25---33 Cloverdle-33                                                
+CEPEL - CENTRO DE PESQUISAS DE ENERGIA ELETRICA - PROGRAMA DE ANALISE DE REDES - V12.00.01                                 PAG.   5
+
+ IEEE 30 Bus Test Case - Winter 1961                                             
+ RELATORIO DE DADOS DE CIRCUITO CA
+
+ X--------------X-----------X-----X-----------------------X-----------------------------------X--------------------X-------------------------X---------------------------------------X-------X
+     BARRA          ESTADO   BARRA  RESIST  REATAN  SUSCEP         T A P         ANG  BARRA           (MVA)               IDENTIFICACAO       AG1 AG2 AG3 AG4 AG5 AG6 AG7 AG8 AG9 A10 Unidade
+   DE   PARA  NC CIR DE PARA PROP.   (%)     (%)   (Mvar)   ATUAL   MIN    MAX  DEFAS CONTR. M NORMAL EMERG. EQUIP.   DA BARRA    PARA BARRA  GRP GRP GRP GRP GRP GRP GRP GRP GRP GRP Max Ope
+ X-----X-----X--X---X---X---X-----X-------X-------X-------X------X------X------X-----X------X-X------X------X------X------------X------------X---X---X---X---X---X---X---X---X---X---X---X---X
+
+     27    29  1 Lig Lig Lig    27   21.98   41.53   0.000                                     9999.0 9999.0 9999.0 Cloverdle-33 Barra29---33                                                
+     27    30  1 Lig Lig Lig    27   32.02   60.27   0.000                                     9999.0 9999.0 9999.0 Cloverdle-33 Barra30---33                                                
+     28    27  1 Lig Lig Lig    28    0.00   39.60   0.000  0.968                              9999.0 9999.0 9999.0 Cloverdle132 Cloverdle-33                                           1   1
+     29    30  1 Lig Lig Lig    29   23.99   45.33   0.000                                     9999.0 9999.0 9999.0 Barra29---33 Barra30---33                                                
