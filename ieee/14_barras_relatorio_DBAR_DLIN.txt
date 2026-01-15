@@ -1,0 +1,54 @@
+CEPEL - CENTRO DE PESQUISAS DE ENERGIA ELETRICA - PROGRAMA DE ANALISE DE REDES - V12.00.01                                 PAG.   1
+
+ IEEE 14 Bus Test Case - Winter 1962                                             
+ RELATORIO DE DADOS DE BARRA CA
+
+ X------------------X-------------X----------------------------X-------X-----------------------X---------------X-------X---X---X---------------------------------------X
+      BARRA            BARRA              TENSAO          GRUPO  GER MW         GER Mvar             CARGA       SHUNT      BMP AG1 AG2 AG3 AG4 AG5 AG6 AG7 AG8 AG9 A10
+  NUM.      NOME     TP ARE CONTR   MOD   ANG   ESPEC CNT B  L   ATUAL     MIN   ATUAL     MAX      MW    Mvar    Mvar  EST TIP GRP GRP GRP GRP GRP GRP GRP GRP GRP GRP
+ X-----X------------X--X---X------X-----X------X-----X---X--X--X-------X-------X-------X-------X-------X-------X-------X---X---X---X---X---X---X---X---X---X---X---X---X
+
+      1 Barra-01--HV  2   1      1 1.060   -0.0 1.060 LOC  0  0   232.4 -9999.0   -16.5 99999.0     0.0     0.0     0.0 LIG                                            
+      2 Barra-02--HV  1   1      2 1.045   -5.0 1.045 LOC  0  0    40.0   -40.0    43.6    50.0    21.7    12.7     0.0 LIG                                            
+      3 Barra-03--HV  1   1      3 1.010  -12.7 1.010 LOC  0  0     0.0     0.0    25.1    40.0    94.2    19.0     0.0 LIG                                            
+      4 Barra-04--HV  0   1      0 1.018  -10.3            0  0     0.0     0.0     0.0     0.0    47.8    -3.9     0.0 LIG                                            
+      5 Barra-05--HV  0   1      0 1.020   -8.8            0  0     0.0     0.0     0.0     0.0     7.6     1.6     0.0 LIG                                            
+      6 Barra-06--LV  1   1      6 1.070  -14.2 1.070 LOC  0  0     0.0    -6.0    12.7    24.0    11.2     7.5     0.0 LIG                                            
+      7 Barra-07--ZV  0   1      0 1.062  -13.4            0  0     0.0     0.0     0.0     0.0     0.0     0.0     0.0 LIG                                            
+      8 Barra-08--TV  1   1      8 1.090  -13.4 1.090 LOC  0  0     0.0    -6.0    17.6    24.0     0.0     0.0     0.0 LIG                                            
+      9 Barra-09--LV  0   1      0 1.056  -14.9            0  0     0.0     0.0     0.0     0.0    29.5    16.6    19.0 LIG                                            
+     10 Barra-10--LV  0   1      0 1.051  -15.1            0  0     0.0     0.0     0.0     0.0     9.0     5.8     0.0 LIG                                            
+     11 Barra-11--LV  0   1      0 1.057  -14.8            0  0     0.0     0.0     0.0     0.0     3.5     1.8     0.0 LIG                                            
+     12 Barra-12--LV  0   1      0 1.055  -15.1            0  0     0.0     0.0     0.0     0.0     6.1     1.6     0.0 LIG                                            
+     13 Barra-13--LV  0   1      0 1.050  -15.2            0  0     0.0     0.0     0.0     0.0    13.5     5.8     0.0 LIG                                            
+     14 Barra-14--LV  0   1      0 1.036  -16.0            0  0     0.0     0.0     0.0     0.0    14.9     5.0     0.0 LIG                                            
+CEPEL - CENTRO DE PESQUISAS DE ENERGIA ELETRICA - PROGRAMA DE ANALISE DE REDES - V12.00.01                                 PAG.   2
+
+ IEEE 14 Bus Test Case - Winter 1962                                             
+ RELATORIO DE DADOS DE CIRCUITO CA
+
+ X--------------X-----------X-----X-----------------------X-----------------------------------X--------------------X-------------------------X---------------------------------------X-------X
+     BARRA          ESTADO   BARRA  RESIST  REATAN  SUSCEP         T A P         ANG  BARRA           (MVA)               IDENTIFICACAO       AG1 AG2 AG3 AG4 AG5 AG6 AG7 AG8 AG9 A10 Unidade
+   DE   PARA  NC CIR DE PARA PROP.   (%)     (%)   (Mvar)   ATUAL   MIN    MAX  DEFAS CONTR. M NORMAL EMERG. EQUIP.   DA BARRA    PARA BARRA  GRP GRP GRP GRP GRP GRP GRP GRP GRP GRP Max Ope
+ X-----X-----X--X---X---X---X-----X-------X-------X-------X------X------X------X-----X------X-X------X------X------X------------X------------X---X---X---X---X---X---X---X---X---X---X---X---X
+
+      1     2  1 Lig Lig Lig     1    1.94    5.92   5.280                                     9999.0 9999.0 9999.0 Barra-01--HV Barra-02--HV                                                
+      1     5  1 Lig Lig Lig     1    5.40   22.30   4.920                                     9999.0 9999.0 9999.0 Barra-01--HV Barra-05--HV                                                
+      2     3  1 Lig Lig Lig     2    4.70   19.80   4.380                                     9999.0 9999.0 9999.0 Barra-02--HV Barra-03--HV                                                
+      2     4  1 Lig Lig Lig     2    5.81   17.63   3.400                                     9999.0 9999.0 9999.0 Barra-02--HV Barra-04--HV                                                
+      2     5  1 Lig Lig Lig     2    5.69   17.39   3.460                                     9999.0 9999.0 9999.0 Barra-02--HV Barra-05--HV                                                
+      3     4  1 Lig Lig Lig     3    6.70   17.10   1.280                                     9999.0 9999.0 9999.0 Barra-03--HV Barra-04--HV                                                
+      4     5  1 Lig Lig Lig     4    1.33    4.21   0.000                                     9999.0 9999.0 9999.0 Barra-04--HV Barra-05--HV                                                
+      4     7  1 Lig Lig Lig     4    0.00   20.91   0.000  0.978                              9999.0 9999.0 9999.0 Barra-04--HV Barra-07--ZV                                           1   1
+      4     9  1 Lig Lig Lig     4    0.00   55.62   0.000  0.969                              9999.0 9999.0 9999.0 Barra-04--HV Barra-09--LV                                           1   1
+      5     6  1 Lig Lig Lig     5    0.00   25.20   0.000  0.932                              9999.0 9999.0 9999.0 Barra-05--HV Barra-06--LV                                           1   1
+      6    11  1 Lig Lig Lig     6    9.50   19.89   0.000                                     9999.0 9999.0 9999.0 Barra-06--LV Barra-11--LV                                                
+      6    12  1 Lig Lig Lig     6   12.29   25.58   0.000                                     9999.0 9999.0 9999.0 Barra-06--LV Barra-12--LV                                                
+      6    13  1 Lig Lig Lig     6    6.62   13.03   0.000                                     9999.0 9999.0 9999.0 Barra-06--LV Barra-13--LV                                                
+      7     8  1 Lig Lig Lig     7    0.00   17.62   0.000                                     9999.0 9999.0 9999.0 Barra-07--ZV Barra-08--TV                                                
+      7     9  1 Lig Lig Lig     7    0.00   11.00   0.000                                     9999.0 9999.0 9999.0 Barra-07--ZV Barra-09--LV                                                
+      9    10  1 Lig Lig Lig     9    3.18    8.45   0.000                                     9999.0 9999.0 9999.0 Barra-09--LV Barra-10--LV                                                
+      9    14  1 Lig Lig Lig     9   12.71   27.04   0.000                                     9999.0 9999.0 9999.0 Barra-09--LV Barra-14--LV                                                
+     10    11  1 Lig Lig Lig    10    8.20   19.21   0.000                                     9999.0 9999.0 9999.0 Barra-10--LV Barra-11--LV                                                
+     12    13  1 Lig Lig Lig    12   22.09   19.99   0.000                                     9999.0 9999.0 9999.0 Barra-12--LV Barra-13--LV                                                
+     13    14  1 Lig Lig Lig    13   17.09   34.80   0.000                                     9999.0 9999.0 9999.0 Barra-13--LV Barra-14--LV                                                
