@@ -1,0 +1,4 @@
+Numero;Tensao (p.u.);Angulo (graus);Carga Ativa (MW);Carga Reativa (Mvar);Geracao Ativa (MW);Geracao Reativa (Mvar);Shunt (Mvar)
+1;1,00;0,00;80,00;20,00;376,38;49,80;-0,00
+2;0,95;-12,47;100,00;40,00;160,00;140,01;-0,00
+3;0,72;-35,13;400,00;200,00;100,00;200,00;-0,00

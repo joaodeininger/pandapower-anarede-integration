@@ -3,8 +3,8 @@ import math
 import pandas as pd
 
 # Ajuste o caminho do arquivo aqui
-arquivo = "ieee/118_barras_relatorio_DBAR_DLIN.txt"
-output_file = "convs/saida_118_barras.csv"
+arquivo = "ieee/14_barras_relatorio_DBAR_DLIN.txt"
+output_file = "convs/saida_14_barras.csv"
 
 def parse_anarede_final(txt_file):
     net = pp.create_empty_network()

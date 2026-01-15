@@ -22,7 +22,7 @@ bus4 = create_bus(net, vn_kv=V_base_kv, name="Bus 4")
 bus5 = create_bus(net, vn_kv=V_base_kv, name="Bus 5")
 
 # Bus Elements
-create_ext_grid(net, bus=bus1, vm_pu=1.05, name="Swing")
+create_ext_grid(net, bus=bus1, vm_pu=1.05, name="Swing Slack")
 create_load(net, bus=bus2, p_mw=50, q_mvar=20, name="Load1")
 create_gen(net, bus=bus3, p_mw=60, vm_pu=1.02, name="Generator")
 create_load(net, bus=bus4, p_mw=40, q_mvar=15, name="Load2")

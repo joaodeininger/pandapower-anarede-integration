@@ -1,0 +1,27 @@
+CEPEL - CENTRO DE PESQUISAS DE ENERGIA ELETRICA - PROGRAMA DE ANALISE DE REDES - V12.00.01                                 PAG.   1
+
+ Exemplo de 3 barras - N�o Convergido JP                                         
+ RELATORIO DE DADOS DE BARRA CA
+
+ X------------------X-------------X----------------------------X-------X-----------------------X---------------X-------X---X---X---------------------------------------X
+      BARRA            BARRA              TENSAO          GRUPO  GER MW         GER Mvar             CARGA       SHUNT      BMP AG1 AG2 AG3 AG4 AG5 AG6 AG7 AG8 AG9 A10
+  NUM.      NOME     TP ARE CONTR   MOD   ANG   ESPEC CNT B  L   ATUAL     MIN   ATUAL     MAX      MW    Mvar    Mvar  EST TIP GRP GRP GRP GRP GRP GRP GRP GRP GRP GRP
+ X-----X------------X--X---X------X-----X------X-----X---X--X--X-------X-------X-------X-------X-------X-------X-------X---X---X---X---X---X---X---X---X---X---X---X---X
+
+      1 Barra-Ref.    2   1      1 1.000    0.0 1.000 LOC  0  0     0.0 -9999.0     0.0 99999.0    80.0    20.0     0.0 LIG                                            
+      2 Barra-Ger.    1   1      2 0.950    0.0 0.950 LOC  0  0   160.0 -9999.0     0.0 99999.0   100.0    40.0     0.0 LIG                                            
+      3 Barra-Carga.  0   1      0 1.000    0.0            0  0   200.0     0.0   100.0     0.0   400.0   200.0     0.0 LIG                                            
+CEPEL - CENTRO DE PESQUISAS DE ENERGIA ELETRICA - PROGRAMA DE ANALISE DE REDES - V12.00.01                                 PAG.   2
+
+ Exemplo de 3 barras - N�o Convergido JP                                         
+ RELATORIO DE DADOS DE CIRCUITO CA
+
+ X--------------X-----------X-----X-----------------------X-----------------------------------X--------------------X-------------------------X---------------------------------------X-------X
+     BARRA          ESTADO   BARRA  RESIST  REATAN  SUSCEP         T A P         ANG  BARRA           (MVA)               IDENTIFICACAO       AG1 AG2 AG3 AG4 AG5 AG6 AG7 AG8 AG9 A10 Unidade
+   DE   PARA  NC CIR DE PARA PROP.   (%)     (%)   (Mvar)   ATUAL   MIN    MAX  DEFAS CONTR. M NORMAL EMERG. EQUIP.   DA BARRA    PARA BARRA  GRP GRP GRP GRP GRP GRP GRP GRP GRP GRP Max Ope
+ X-----X-----X--X---X---X---X-----X-------X-------X-------X------X------X------X-----X------X-X------X------X------X------------X------------X---X---X---X---X---X---X---X---X---X---X---X---X
+
+      1     2  1 Lig Lig Lig     1   20.00   40.00  40.000                                     9999.0 9999.0 9999.0 Barra Ref.   Barra Ger.                                                  
+      1     2  2 Lig Lig Lig     1   20.00   40.00  40.000                                     9999.0 9999.0 9999.0 Barra Ref.   Barra Ger.                                                  
+      1     3  1 Lig Lig Lig     1   10.00   25.00  20.000                                     9999.0 9999.0 9999.0 Barra Ref.   Barra Carga.                                                
+      3     2  1 Lig Lig Lig     3    0.00   20.00   0.000  0.900                              9999.0 9999.0 9999.0 Barra Carga. Barra Ger.                                             1   1

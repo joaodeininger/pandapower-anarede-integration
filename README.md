@@ -24,11 +24,26 @@ pu_to_unit.py: Helper module containing parameter conversion functions (e.g., fr
 **How to Use**
 **1. Prerequisites**
 
-Ensure you have Python installed along with the necessary libraries. It is recommended to use venv. To install the dependencies, run:
+Ensure you have Python installed along with the necessary libraries. It is recommended to use venv.
+**-Using venv**
+
+To create a virtual environment, run:
+
+```bash
+python -m venv venv
+
+To activate the virtual environment, run:
+
+```bash
+venv\Scripts\activate
+```
+
+To install the dependencies, run:
 
 ```bash
 pip install -r requirements.txt
 ```
+
 **2. Running the IEEE Simulation (Definitive)**
 To run the IEEE network simulation, execute the following command in your terminal:
 
@@ -82,11 +97,28 @@ pu_to_unit.py: Módulo auxiliar que contém funções de conversão de parâmetr
 **Como Usar**
 
 **1. Pré-requisitos**
-Certifique-se de ter o Python instalado e as bibliotecas necessárias. Recomenda-se o uso de venv. Para instalar as dependências, execute o seguinte comando:
+Certifique-se de ter o Python instalado e as bibliotecas necessárias. Recomenda-se o uso de venv. 
+
+**Utilizando venv**
+
+Para criar um ambiente virtual, execute o seguinte comando:
+
+```bash
+python -m venv venv
+```
+
+Para ativar o ambiente virtual, execute o seguinte comando:
+
+```bash
+venv\Scripts\activate
+```
+
+Para instalar as dependências, execute o seguinte comando:
 
 ```bash
 pip install -r requirements.txt
 ```
+
 **2. Executando a Simulação IEEE (Definitiva)**
 Para rodar a simulação da rede IEEE, execute o seguinte comando no terminal:
 
