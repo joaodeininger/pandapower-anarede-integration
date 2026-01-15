@@ -35,7 +35,7 @@ def calcular_erro_percentual(arquivo_x, arquivo_y, col_x, col_y, barras):
 
     # 1. Carregar os dados
     try:
-        df_power = pd.read_csv(arquivo_x)
+        df_power = pd.read_csv(arquivo_x, sep=";")
         df_ana = pd.read_csv(arquivo_y, sep=";")
     except FileNotFoundError as e:
         print(f"Erro ao abrir arquivo: {e}")
@@ -62,8 +62,8 @@ def calcular_erro_percentual(arquivo_x, arquivo_y, col_x, col_y, barras):
 # Altere os nomes abaixo para os seus arquivos e colunas reais
 arquivo_programa_x = "resultados/ieee118_pandapower.csv"
 arquivo_programa_y = "resultados/ieee118_anarede.csv"
-coluna_referencia = "vm_pu"  # Exemplo: nome da coluna no arquivo X
-coluna_comparacao = "Tensao (p.u.)"  # Exemplo: nome da coluna no arquivo Y
+coluna_referencia = "Geracao Reativa (Mvar)"  # Exemplo: nome da coluna no arquivo X
+coluna_comparacao = "Geracao Reativa (Mvar)"  # Exemplo: nome da coluna no arquivo Y
 barras = 118
 
 # Executar

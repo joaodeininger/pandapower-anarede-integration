@@ -11,8 +11,13 @@ import pandas as pd
 import math
 import os
 
+# --- CAMINHO DO ARQUIVO (EDITE AQUI) ---
+arquivo_pwf = "ieee/IEEE118.PWF" 
+# 4. Salvar em CSV (Compatível com Anarede)
+saida_csv = "resultados/IEEE118.csv"
+
 # 1. FUNÇÕES AUXILIARES DE LEITURA (BLINDADAS)
-def ler_valor(linha, inicio, fim, escala=1.0, padrao=0.0):
+def ler_valor(linha, inicio, fim, padrao=0.0):
     """Lê float de string formatada, tratando .5, -.5, vazios, etc."""
     texto = linha[inicio:fim].strip()
     if not texto or texto == ".": return padrao
@@ -75,28 +80,28 @@ def pwf_to_pandapower(pwf_file):
         # --- PROCESSAR BARRAS (DBAR) ---
         if secao == 'DBAR':
             try:
-                num = ler_int(line, 0, 5)
+                num = ler_int(line, 1, 6)
                 if num == 0: continue
 
                 # Tenta ler o tipo. Se falhar (ex: 'L1'), assume 0 (PQ)
-                tipo = ler_int(line, 7, 8, padrao=0) 
+                tipo = ler_int(line, 8, 9, padrao=0) 
                 
                 nome = line[10:22].strip()
                 if not nome: nome = f"Barra {num}"
 
-                v_val = ler_valor(line, 23, 28)
+                v_val = ler_valor(line, 25, 29)
                 # Ajuste se tensão vier em kV ou pu (heurística)
                 v_pu = v_val if v_val < 2.0 else v_val * 0.001
                 if v_pu < 0.1: v_pu = 1.0 # Proteção
                 
-                ang = ler_valor(line, 28, 32)
+                ang = ler_valor(line, 30, 34)
                 
-                pg = ler_valor(line, 32, 37)
-                qg = ler_valor(line, 37, 42)
-                qmin = ler_valor(line, 42, 47)
-                qmax = ler_valor(line, 47, 52)
+                pg = ler_valor(line, 35, 39)
+                qg = ler_valor(line, 40, 43)
+                qmin = ler_valor(line, 44, 49)
+                qmax = ler_valor(line, 49, 54)
                 
-                pl = ler_valor(line, 58, 63)
+                pl = ler_valor(line, 61, 65)
                 ql = ler_valor(line, 63, 68)
                 shunt = ler_valor(line, 68, 73)
 
@@ -213,8 +218,7 @@ def extrair_resultados_completos(net):
 # 4. EXECUÇÃO PRINCIPAL
 if __name__ == "__main__":
     
-    # --- CAMINHO DO ARQUIVO (EDITE AQUI) ---
-    arquivo_pwf = "ieee/IEEE118.pwf" 
+    
     
     if not os.path.exists(arquivo_pwf):
         print(f"ERRO: Arquivo não encontrado em {arquivo_pwf}")
@@ -246,8 +250,7 @@ if __name__ == "__main__":
                 print("\n--- Resultados (Primeiras 10 Barras) ---")
                 print(df_res.head(10))
                 
-                # 4. Salvar em CSV (Compatível com Anarede)
-                saida_csv = "resultado_pandapower.csv"
+                
                 df_res.to_csv(saida_csv, sep=';', decimal=',')
                 print(f"\nRelatório completo salvo em: {saida_csv}")
                 

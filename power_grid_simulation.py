@@ -105,7 +105,7 @@ results["Q_mvar"] = net.res_bus["q_mvar"]
 print("\nResultados das Barras:")
 print(results)
 
-results.to_csv("resultados_pandapower_joaopedro.csv")
+results.to_csv("resultados/resultados_pandapower_joaopedro.csv")
 print("\nResultados exportados para 'resultados/resultados_pandapower_joaopedro.csv'")
 
 # Contingency simulation

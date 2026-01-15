@@ -18,12 +18,12 @@ except pp.LoadflowNotConverged:
 print("Fluxo convergido.")
 
 # 3. Estruturar DataFrame de Saída
-# Criamos um DataFrame base com todas as barras (1 a 118)
+# Criamos um DataFrame base com todas as barras
 df_out = pd.DataFrame(index=net.bus.index)
 df_out.index.name = "Bus_ID"
 
-# Coluna Identificadora
-df_out["Numero"] = df_out.index
+# Coluna Identificadora ( + 1 para alinhar com o ANAREDE, onde as barras começam de 1)
+df_out["Numero"] = df_out.index + 1
 
 # --- A. TENSÃO E ÂNGULO ---
 df_out["Tensao (p.u.)"] = net.res_bus["vm_pu"]
